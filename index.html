@@ -13,31 +13,46 @@
     }
     .container {
       max-width: 700px;
-      margin: 40px auto;
+      margin: 32px auto;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-      padding: 32px 24px;
-    }
-    h1 {
-      color: #1a237e;
-      font-size: 2.2em;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    h2 {
-      color: #3949ab;
-      margin-top: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+      padding: 32px 18px 24px 18px;
+      position: relative;
     }
     .badge {
       display: inline-block;
       background: #ffb300;
       color: #fff;
       font-weight: bold;
-      padding: 4px 16px;
+      padding: 5px 20px;
       border-radius: 50px;
       font-size: 1.1em;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    h1 {
+      color: #1a237e;
+      font-size: 2.1em;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .product-cover {
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 12px 0;
+    }
+    .product-cover img {
+      max-width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(26,35,126,0.13);
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.15em;
+      margin-bottom: 18px;
+      color: #3949ab;
+      font-weight: 500;
     }
     .cta-btn {
       display: block;
@@ -45,30 +60,29 @@
       background: linear-gradient(90deg, #3949ab 60%, #1a237e 100%);
       color: #fff;
       text-align: center;
-      font-size: 1.4em;
+      font-size: 1.3em;
       font-weight: bold;
-      padding: 20px 0;
+      padding: 18px 0;
       border: none;
       border-radius: 8px;
-      margin: 36px 0 16px 0;
+      margin: 32px 0 20px 0;
       cursor: pointer;
       text-decoration: none;
       box-shadow: 0 2px 8px rgba(26,35,126,0.08);
       transition: background 0.2s;
+      letter-spacing: 1px;
     }
     .cta-btn:hover {
       background: linear-gradient(90deg, #1a237e 60%, #3949ab 100%);
     }
-    .proof {
-      background: #f1f8e9;
-      border-left: 4px solid #81c784;
-      padding: 16px 20px;
-      margin: 24px 0;
-      border-radius: 6px;
-      font-style: italic;
+    h2 {
+      color: #3949ab;
+      margin-top: 26px;
+      margin-bottom: 10px;
+      font-size: 1.23em;
     }
     ul {
-      margin: 0 0 20px 20px;
+      margin: 0 0 20px 22px;
     }
     .bonus {
       background: #e3f2fd;
@@ -77,18 +91,85 @@
       margin: 20px 0;
       border-radius: 6px;
     }
-    .center {
+    .proof-section {
+      margin: 36px 0 18px 0;
+    }
+    .proof-title {
+      color: #388e3c;
+      font-weight: bold;
+      font-size: 1.13em;
+      margin-bottom: 10px;
       text-align: center;
+    }
+    .proof-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+    .proof-card {
+      background: #f1f8e9;
+      border-left: 4px solid #81c784;
+      border-radius: 8px;
+      padding: 16px 14px;
+      max-width: 290px;
+      min-width: 220px;
+      box-shadow: 0 2px 8px rgba(129,199,132,0.10);
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .proof-card img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
+      border: 2px solid #81c784;
+    }
+    .proof-card p {
+      font-style: italic;
+      font-size: 1em;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .proof-card strong {
+      color: #388e3c;
+      font-size: 0.98em;
+    }
+    .print-section {
+      text-align: center;
+      margin: 22px 0;
+    }
+    .print-section img {
+      max-width: 320px;
+      border-radius: 7px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     }
     .small {
       font-size: 0.95em;
       color: #666;
       margin-top: 8px;
+      text-align: center;
+    }
+    .urgency {
+      background: #fff3e0;
+      color: #e65100;
+      border-left: 4px solid #ff9800;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin: 18px 0;
+      text-align: center;
     }
     @media (max-width: 600px) {
-      .container { padding: 12px 4px; }
-      h1 { font-size: 1.3em; }
-      .cta-btn { font-size: 1em; padding: 14px 0; }
+      .container { padding: 10px 2px; }
+      h1 { font-size: 1.15em; }
+      .cta-btn { font-size: 1em; padding: 13px 0; }
+      .proof-cards { flex-direction: column; align-items: center; }
+      .product-cover img { max-width: 98vw; }
+      .print-section img { max-width: 96vw; }
     }
   </style>
 </head>
@@ -96,25 +177,34 @@
   <div class="container">
     <div class="badge center">NOVA OPORTUNIDADE 2025</div>
     <h1>Domine a IA e Fature R$5.000 em 7 Dias<br>Sem Investimento Inicial!</h1>
-    <p class="center"><strong>Manual de Guerra:</strong> O passo a passo prático para transformar inteligência artificial em dinheiro no seu bolso ainda esta semana.</p>
+    <div class="product-cover">
+      <img src="URL_DA_CAPA_DO_PRODUTO.jpg" alt="Capa do Manual Domínio da IA">
+    </div>
+    <div class="subtitle">
+      <strong>Manual de Guerra:</strong> O passo a passo prático para transformar inteligência artificial em dinheiro no seu bolso ainda esta semana. <br>
+      <span style="color:#e65100;">Você só precisa executar. O resto é lucro!</span>
+    </div>
 
     <a href="https://pay.kiwify.com.br/Sr9Ij0X" class="cta-btn">QUERO DOMINAR A IA AGORA!</a>
+
+    <div class="urgency">Oferta especial: Garanta acesso imediato e receba todos os bônus antes que acabe!</div>
 
     <h2>O Que Você Vai Receber:</h2>
     <ul>
       <li><strong>Plano de 7 dias para resultados rápidos:</strong> Execute 3h/dia e veja o dinheiro entrando.</li>
-      <li><strong>Ferramentas gratuitas:</strong> ChatGPT, Canva, Manychat, Google Docs, Jasper e mais.</li>
+      <li><strong>Ferramentas gratuitas:</strong> ChatGPT, Canva, Manychat, Google Docs e muito mais.</li>
       <li><strong>Conteúdo pronto para vender:</strong> Mini-ebooks, checklists, vídeos e iscas digitais.</li>
       <li><strong>Automação de vendas 24h:</strong> Monte fluxos simples e venda mesmo dormindo.</li>
       <li><strong>Método validado para escalar:</strong> Testado por pessoas reais, mesmo sem experiência prévia.</li>
     </ul>
 
-    <div class="proof">
-      <strong>Prova Social</strong><br>
-      “Eu segui o passo a passo do manual e em menos de uma semana já tinha vendido meus primeiros produtos digitais. Nunca pensei que fosse possível ganhar dinheiro tão rápido usando IA!”<br>
-      <strong>- Mariana S., Belo Horizonte</strong><br><br>
-      “O Domínio da IA mudou minha vida. Saí do zero e já estou faturando mais do que no meu antigo emprego. Recomendo para todo mundo que quer resultado de verdade!”<br>
-      <strong>- Carlos M., Recife</strong>
+    <div class="bonus">
+      <strong>Bônus Nuclear:</strong>
+      <ul>
+        <li>Checklist para fazer seus primeiros R$500 em 48h</li>
+        <li>Script pronto de vendas (áudio e texto)</li>
+        <li>Dicas para escalar rapidamente e nunca mais depender de patrão</li>
+      </ul>
     </div>
 
     <h2>Por Que Esse Manual É Diferente?</h2>
@@ -124,14 +214,27 @@
       <li><strong>Você não está sozinho:</strong> Receba feedback, melhore e veja sua renda crescer a cada semana.</li>
     </ul>
 
-    <div class="bonus">
-      <strong>Bônus Nuclear:</strong>
-      <ul>
-        <li>Checklist para fazer seus primeiros R$500 em 48h</li>
-        <li>Script pronto de vendas</li>
-        <li>Dicas para escalar rapidamente</li>
-      </ul>
+    <div class="proof-section">
+      <div class="proof-title">Veja Quem Já Mudou de Vida com o Manual:</div>
+      <div class="proof-cards">
+        <div class="proof-card">
+          <img src="URL_FOTO_CLIENTE1.jpg" alt="Cliente Mariana">
+          <p>“Eu segui o passo a passo do manual e em menos de uma semana já tinha vendido meus primeiros produtos digitais. Nunca pensei que fosse possível ganhar dinheiro tão rápido usando IA!”</p>
+          <strong>- Mariana S., Belo Horizonte</strong>
+        </div>
+        <div class="proof-card">
+          <img src="URL_FOTO_CLIENTE2.jpg" alt="Cliente Carlos">
+          <p>“O Domínio da IA mudou minha vida. Saí do zero e já estou faturando mais do que no meu antigo emprego. Recomendo para todo mundo que quer resultado de verdade!”</p>
+          <strong>- Carlos M., Recife</strong>
+        </div>
+      </div>
+      <div class="print-section">
+        <img src="URL_DO_PRINT_AVALIACAO.jpg" alt="Print de Avaliação Real">
+        <div class="small">Avaliação real de cliente satisfeito</div>
+      </div>
     </div>
+
+    <div class="urgency">Não perca tempo! Cada minuto de dúvida é dinheiro que você deixa na mesa.</div>
 
     <h2>Oferta Exclusiva por Tempo Limitado!</h2>
     <ul>
@@ -140,7 +243,7 @@
     </ul>
 
     <a href="https://pay.kiwify.com.br/Sr9Ij0X" class="cta-btn">QUERO DOMINAR A IA AGORA!</a>
-    <p class="center small">Aja agora. Cada minuto de dúvida é dinheiro que você deixa na mesa.<br>Transforme conhecimento em dinheiro!</p>
+    <p class="small">Aja agora. Transforme conhecimento em dinheiro. <br> Você só precisa começar!</p>
   </div>
 </body>
 </html>
